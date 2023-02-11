@@ -1,3 +1,3 @@
-# Legendary Broccoli :broccoli:
+# A csv to json API :construction:
 
-A base typescript project with lintting setup.
+Work in progress
