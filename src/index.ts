@@ -1,17 +1,16 @@
 import express, { Express, Request, Response } from 'express';
 import dotenv from 'dotenv';
+import { readAndParseFile } from './csv-parser';
 
 dotenv.config();
 
 const app: Express = express();
 const port = process.env.PORT;
 
-app.get('/', (req: Request, res: Response) => {
-  res.send('Typescript + Express Server!!!');
-});
+app.post('/convert', async (req: Request, res: Response) => {
+  const records = await readAndParseFile()
 
-app.post('/convert', (req: Request, res: Response) => {
-  res.send('You got me!');
+  res.send(records)
 });
 
 app.listen(port, () => {
